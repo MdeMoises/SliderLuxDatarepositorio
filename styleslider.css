@@ -1,0 +1,791 @@
+/*
+<!--==================================================-->
+<!-- Variables -->
+<!--==================================================-->
+*/
+
+:root{
+    --text-color:#1B2E35;
+    --text-secondary: #09f;
+    --text-other: #6f858b;
+    --azul:#007DFE;
+    --contenedor: rgb(235, 235, 235);
+    --separador: #f7f7f7;
+    --resaltador: #F8FAFD;
+    --azul-oscuro:#0062CF;
+    --azul-claro:#AACBFF;
+    --blanco: #fff;
+}
+
+/*
+<!--==================================================-->
+<!-- General -->
+<!--==================================================-->
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--separador);
+    max-width: 100vw;
+}
+
+.header-container{
+    position: relative;
+    height: 100vh;
+    background-image: url(img/slider/bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+}
+
+/*
+<!--==================================================-->
+<!-- Nav Bar -->
+<!--==================================================-->
+*/
+
+.nav{
+    position: inherit;
+    width: 100%;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 100;
+}
+
+.nav-logo{
+    color: var(--separador);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.nav-menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    list-style-type: none;
+}
+
+.nav-menu ul li a{
+    color: var(--separador);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.nav-button .btn{
+    padding: 0;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.nav-button .btn a{
+    text-decoration: none;
+    color: var(--separador);
+}
+
+/*
+<!--==================================================-->
+<!-- Slider -->
+<!--==================================================-->
+*/
+
+.slider{
+    height: 100vh;
+    width: 100%;
+    margin-top: -4.5rem;
+}
+
+.item{
+    position: absolute;
+    padding: 6rem 5rem;
+    width: 100%;
+}
+
+/*
+<!--==================================================-->
+<!-- Item 1 -->
+<!--==================================================-->
+*/
+
+#item1 .content, #item3 .content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#item1 .text, #item3 .text{
+    color: var(--separador);
+    align-self: center;
+    width: 60%;
+}
+
+#item1 h1{
+    font-size: 3.3rem;
+    font-weight: 800;
+}
+
+#item1 p{
+    font-size: 1.2rem;
+}
+
+#item1 .img, #item3 .img{
+    width: 35%;
+}
+
+#item1 img, #item2 img, #item3 img{
+    width: 100%;
+    border-radius: 2rem;
+}
+
+/*
+<!--==================================================-->
+<!-- Item 2 -->
+<!--==================================================-->
+*/
+
+#item2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#item2 .img{
+    width: 20%;
+    display: flex;
+    justify-self: center;
+}
+
+#item2 .text{
+    margin: auto;
+    margin-top: 1.5rem;
+    color: var(--separador);
+    text-align: center;
+    width: 80%;
+}
+
+#item2 .text h1, #item3 .text h1{
+    font-size: 2.5rem;
+}
+
+#item2 .text p{
+    width: 80%;
+    margin: auto;
+}
+
+/*
+<!--==================================================-->
+<!-- Item 3 -->
+<!--==================================================-->
+*/
+
+#item3 .text{
+    width: 56%;
+    text-align: end;
+}
+
+#item .text h1{
+    font-size: 3rem;
+}
+
+#item3 .text p{
+    margin-top: 1rem;
+}
+
+#item3 .img{
+    width: 38%;
+}
+
+#item1, #item2, #item3{
+    opacity: 0;
+}
+
+/* ==================================
+    Botones slider 
+==================================*/
+
+.buttonslist{
+    position: absolute;
+    display: flex;
+    bottom: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+ .buttonslist .content{
+    display: flex;
+    flex-direction: row;
+    width: 5rem;/*Cambio*/
+    justify-content: space-between;
+    align-items: center;   
+}
+
+ .buttonslist .button-item{
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--text-secondary);
+    border-radius: 100%;
+    border-style: none;
+    cursor: pointer
+}
+
+.buttonslist .button-item:hover{
+    background-color: var(--contenedor);
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.buttonslist .button-item.seleccionado{
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--separador);
+}
+
+/* ==================================================-
+    Movimiento items 
+==================================================-*/
+
+.item.active{
+    opacity: 1 !important;
+    transition: 0.5s;
+    /*animation: desplazamiento 1s normal forwards;*/
+}
+
+.item.active .content .img img{
+    position: relative;
+    animation: desplazamiento 1.5s normal forwards;    
+}
+
+.item.active .content .text{
+    position: relative;
+    animation: desplazamientotexto 2s normal forwards;
+}
+
+#item2.active .content .text{
+    position: relative;
+    animation: desplazamientotexto2 2s normal forwards;
+}
+
+@keyframes desplazamiento {
+    from{transform: translateY(-5rem); opacity: 0.1}
+    to{ transform: translateY(0); opacity: 1}
+}
+
+@keyframes desplazamientotexto {
+    from{transform: translateX(-100px); opacity: 0.1}
+    to{ transform: translateX(0); opacity: 1}
+}
+
+@keyframes desplazamientotexto2 {
+    from{transform: translateY(100px); opacity: 0.1}
+    to{ transform: translateY(0); opacity: 1}
+}
+
+
+/*
+<!--==================================================-->
+<!-- Objetivos -->
+<!--==================================================-->
+*/
+
+.objetivos-content{
+    padding: 0rem 7rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.objetivos-content .img{
+    width: 40%;
+}
+
+.objetivos-content .img img{
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.objetivos-content .text{
+    align-self: center;
+    text-align: justify;
+    padding: 1rem 0rem;
+    width: 53%;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.objetivos-content .text span{
+    color: var(--azul-oscuro);
+}
+
+.objetivos-especificos{
+    margin: 1rem 0rem;
+    font-size: 0.8rem;
+}
+
+.objetivo-especifico-content{
+    display: flex;
+    padding: 0.5rem 0rem;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.objetivo-especifico-content:last-child{
+    border: none;
+}
+
+.objetivo-especifico-content i{
+    background-color: var(--text-secondary);
+    padding: 1rem 1.3rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    align-self: center;
+    border-radius: 0.5rem;
+    color: var(--blanco);
+}
+
+#especifico2 i{
+    background-color: var(--azul-claro);
+}
+
+.objetivo-especifico-content h3{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+}
+
+.objetivo-especifico-content p{
+    color: var(--text-other);
+}
+
+/* ==================================================-
+    Animacion Objetivos 
+==================================================-*/
+
+.objetivos-content .text p.active{
+    animation: movobjetivo 1s normal forwards;
+} 
+.objetivos-content .img.active{
+    animation: movobjetivoimg 2s normal forwards;
+}
+
+.objetivos-especificos .objetivo-especifico-content.active#especifico1{
+    animation: movobjetivo 2s normal forwards;
+}   
+.objetivos-especificos .objetivo-especifico-content.active#especifico2{
+    animation: movobjetivo 2.5s normal forwards;
+} 
+.objetivos-especificos .objetivo-especifico-content.active#especifico3{
+    animation: movobjetivo 3s normal forwards;
+}
+
+@keyframes movobjetivo {
+    from{transform: translateX(15rem); opacity: 0.1}
+    to{ transform: translateX(0); opacity: 1}
+}
+
+@keyframes movobjetivoimg {
+    from{transform: translateX(-10rem); opacity: 0.1}
+    to{ transform: translateX(0); opacity: 1}
+}
+
+/*
+<!--==================================================-->
+<!-- Funciones -->
+<!--==================================================-->
+*/
+
+.funciones .titulo-funciones h1, .objetivos .titulo-objetivos h1, .demo .titulo-demo h1{
+    text-align: center;
+    font-size: 2.7rem;
+    color: var(--azul);
+    margin: 3rem;
+}
+
+.contenedor-funciones{
+    padding: 0rem 18rem;
+    margin-bottom: 4rem;
+    height: 78vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    place-content: center;
+    background-color: var(--contenedor);
+}
+
+.funcion1, .funcion3{
+    background-color: var(--separador);
+    border-top-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.funcion2{
+    background-color: var(--separador);
+    border-bottom-right-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.funcion1 i, .funcion2 i, .funcion3 i{
+    padding: 3rem;
+    border-radius: 50%;
+    border: 5px solid var(--separador);
+    background-color: var(--azul-oscuro);
+    font-size: 4rem;
+    color: var(--resaltador);
+    box-shadow: 30px 30px 3rem -2rem #15151565;
+    display: flex;
+    justify-self: center;
+}
+
+.funcion2 i{
+    background-color: var(--text-secondary);
+}
+
+.funcion1 h3 , .funcion2 h3, .funcion3 h3{
+    font-size: 1rem;
+    text-align: center;
+    color: var(--azul-oscuro);
+}
+
+.funcion1 p, .funcion2 p, .funcion3 p{
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--azul-oscuro);
+}
+
+.funcion1 ul, .funcion2 ul, .funcion3 ul{
+    list-style-position: inside;
+    font-size: 0.8rem;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+/*
+<!--==================================================-->
+<!-- Demo -->
+<!--==================================================-->
+*/
+
+.demo{
+    height:fit-content;
+}
+
+.demo-container{
+    height: 80vh;
+}
+
+.demos-preview{
+    padding: 1rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+    justify-content: center;/*Cambio*/
+}
+
+.demo-container.animate {
+    transform: scale(.7);
+}
+
+.demo-container.animate.show-animate{
+    transition: 0.8s;
+    transform: scale(1);
+}
+
+.demo-thumbnail{
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-thumbnail .img{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    box-shadow: 40px 40px 3rem -3.5rem #1b2e35a4;
+    border-radius: 1rem;
+    border: 0.4rem solid var(--azul-claro);
+}
+
+.demo-thumbnail .img:hover{
+    width: 103%;
+    height: 53%;
+    box-shadow: 0px 0px 1rem 1.5rem var(--blanco);
+    transition: 0.25s;
+}
+.demo-thumbnail .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: 0.4rem solid var(--blanco);
+}
+
+.demo-thumbnail p{
+    font-weight: 600;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--azul-oscuro);
+}
+
+
+/*
+<!--==================================================-->
+<!-- Footer -->
+<!--==================================================-->
+*/
+
+.footer-container{
+    margin-top: 1rem;
+    padding: 2.8rem 8rem;
+    height: 35vh;
+    background-color: var(--azul);
+    color: var(--resaltador);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container h1{
+    font-size: 1.6rem;
+}
+
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-logo h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.redes i{
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    border: 1px solid var(--resaltador);
+    margin-right: 0.5rem;
+}
+
+#facebook{
+    padding: 0.7rem 0.8rem;
+}
+
+.slogan{
+    text-align: center;
+    align-self: center;
+    width: 50%;
+}
+
+.slogan h1{
+    font-size: 2rem;
+}
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.footer-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-register input{
+    padding: 0.3rem 1rem;
+    text-align: center;
+    border: none;
+}
+
+.footer-final{
+    width: 100%;
+    padding: 1rem 0rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: var(--azul-oscuro);
+    color: var(--azul-claro);
+}
+
+/*
+<!--==================================================-->
+<!-- RESPONSIVE -->
+<!--==================================================-->
+*/
+
+/*PORTATIL*/
+@media(max-width:992px){
+
+    .nav{
+        padding: 1rem 4rem;
+    }
+
+    .item{
+        padding: 8rem 5rem 6rem 5rem;
+    }
+
+    #item3 .text{
+        width: 45%;
+    }
+
+    #item3 .text h1{
+        font-size: 2rem;
+        text-align: justify;
+    }
+
+    #item3 p{
+        font-size: .9rem;
+        text-align: justify;
+    }
+
+    #item3 .img{
+        width: 50%;
+        align-self: center;
+    }
+
+    .objetivos-content{
+        padding: 0rem 4rem;
+    }
+
+    .objetivos-content .img{
+        width: 50%;
+    }
+
+    .text p{
+        font-size: 0.9rem;
+    }
+
+    .objetivos-content .text {
+        margin-left: 2rem;
+    }
+
+    .objetivo-especifico-content i{
+        padding: 1rem 1.5rem;
+        font-size: 2rem;
+    }
+
+    .objetivo-especifico-text p{
+        font-size: 0.7rem;
+    }
+    
+    .contenedor-funciones{
+        gap: 3rem;
+    }
+
+    .funcion1, .funcion2, .funcion3{
+        height: 100%;
+        
+    }
+
+    .funcion2{
+        margin-top: -1.5rem;
+        height: 80%;
+    }
+}
+
+/*Movil*/
+@media(max-width:768px){
+
+    .nav{
+        padding: 1rem 1rem;
+    }
+
+    .nav-menu ul{
+        gap: 1rem;
+    }
+
+    .item{
+        padding: 8rem 5rem 6rem 5rem;
+    }
+
+    .item .content{
+        align-items: center;
+    }
+
+    #item2 p{
+        text-align: justify;
+    }     
+
+    #item3 .text{
+        width: 45%;
+    }
+
+    #item3 .text h1{
+        font-size: 2rem;
+        text-align: justify;
+    }
+
+    #item3 p{
+        font-size: .9rem;
+        text-align: justify;
+    }
+
+    #item3 .img{
+        width: 50%;
+        align-self: center;
+    }
+
+    .objetivos-content{
+        padding: 0rem 4rem;
+        display: grid;
+        justify-items: center;
+    }
+
+    .objetivos-content .img{
+        width: 50%;
+    }
+
+    .text p{
+        font-size: 1.2rem;
+    }
+
+    .objetivos-content .text {
+        margin-left: 0;
+        font-size: 50px;
+    }
+
+    .contenedor-funciones {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;        
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    .funcion1, .funcion2, .funcion3 {
+        width: 75%;
+        height: auto;
+        text-align: center;
+        justify-items: center;
+    }
+    .contenedor-funciones i{
+        margin: 1rem;
+    } 
+    
+    
+    .funcion2 {
+        margin-top: 0;
+        height: auto;
+    }
+    
+    .objetivo-especifico-content i {
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .objetivo-especifico-text p, .objetivo-especifico-text h3{
+        font-size: 1rem;
+    }
+}

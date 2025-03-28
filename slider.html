@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Estilo css -->
+        <link rel="stylesheet" href="styleslider.css">
+
+        <!-- Estilo fontawesome (iconos i) -->
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"/>
+
+        <!-- Fuente de Google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <title>LuxeData Solutions</title>
+    </head>
+    <body>
+        <header>
+<!--==================================================-->
+<!-- Barra de navegacion -->
+<!--==================================================-->
+            <div class="header-container">
+                <div class="nav">
+                    <div class="nav-logo"><strong>Lux</strong>Data</div>
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#objetivolink">Objetivos</a></li>
+                            <li><a href="#funciones">Funciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-button">
+                        <button class="btn"><a href="#demolink">Iniciar sistema</a></button>
+                    </div>
+                </div>
+<!--==================================================-->
+<!-- Slider -->
+<!--==================================================-->
+                <div class="slider">
+                    <div class="list">
+                        <div class="item active" id="item1">
+                            <div class="content">
+                                <div class="text">
+                                    <h1>LuxData: Gestiona tu hotel en un solo lugar.</h1>
+                                    <p>El manejo efectivo de la informacion es importante. Para tu hotel no es la excepcion.</p>
+                                </div>
+                                <div class="img">
+                                    <img src="img/slider/im1.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" id="item2">
+                            <div class="content">
+                                <div class="img">
+                                    <img src="img/slider/im2.jpg">
+                                </div>
+                                <div class="text">
+                                    <h1>¿Cuáles son los beneficios del análisis de datos para hoteles?</h1>
+                                    <p>Mejora de la toma de decisiones. Al recopilar y analizar grandes cantidades de datos, los hoteles pueden obtener información valiosa sobre los patrones de reserva, las preferencias de los clientes, la demanda y la competencia. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" id="item3">
+                            <div class="content">
+                                <div class="img">
+                                    <img src="img/slider/im3.jpg">
+                                </div>
+                                <div class="text">
+                                    <h1>¿Cuáles son los beneficios del análisis de datos para hoteles?</h1>
+                                    <p>Optimización de precios y promociones. Al utilizar datos históricos de reservas, demanda, competencia y otros factores relevantes, los hoteles pueden desarrollar estrategias de precios y promociones que maximicen los ingresos y minimicen los riesgos de overbooking o subocupación.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+<!--==================================================-->
+<!-- Objetivo -->
+<!--==================================================-->
+            <div class="objetivos" id="objetivolink">
+                <div class="titulo-objetivos">
+                    <h1>Objetivos</h1>
+                </div>
+                <div class="objetivos-content">
+                    <div class="img">
+                        <img src="img/slider/im2.jpg">
+                    </div>
+                    <div class="text">
+                        <p>Nuestro objetivo principal es proporcionarte las <span>herramientas necesarias</span> para gestionar cada aspecto de tu hotel de manera <span>eficiente y efectiva</span>. Esto incluye facilitar el acceso a información valiosa que <span>potencie</span> tu toma de decisiones y <span>optimice</span> el rendimiento de tu negocio.</p>
+                        <div class="objetivos-especificos">
+                            <div class="objetivo-especifico-content"  id="especifico1">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                <div class="objetivo-especifico-text">
+                                    <h3>Automatizar el manejo de datos:</h3>
+                                    <p>Ten un manejo automático de los datos de tu hotel, recolectando y organizando la información que necesitas saber.</p>
+                                </div>
+                            </div>
+                            <div class="objetivo-especifico-content" id="especifico2">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                                <div class="objetivo-especifico-text">
+                                    <h3>Toma de decisiones:</h3>
+                                    <p>Ten la capacidad de tomar decisiones más eficaces y que impacten positivamente la eficiencia de tu hotel.</p>
+                                </div>
+                            </div>
+                            <div class="objetivo-especifico-content" id="especifico3">
+                                <i class="fa-solid fa-hotel"></i>
+                                <div class="objetivo-especifico-text">
+                                    <h3>Control:</h3>
+                                    <p>Ten el control de tu hotel conociendo como se mueve cada aspecto dentro de el </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--  Botones inicio Slider -->
+            <div class="buttonslist"> 
+                <div class="content">
+                    <button class="button-item seleccionado" onclick="mostrarSlider(0)"></button> 
+                    <button class="button-item" onclick="mostrarSlider(1)"></button> 
+                    <button class="button-item" onclick="mostrarSlider(2)"></button>
+                </div> 
+            </div>
+<!--==================================================-->
+<!-- Funciones -->
+<!--==================================================-->
+            <div class="funciones" id="funciones">
+                <div class="titulo-funciones">
+                    <h1>Funciones que ofrece LuxData</h1>
+                    <div class="contenedor-funciones">
+                        <div class="funcion1">
+                            <i class="fa-solid fa-hotel"></i>
+                            <h3>Reserva de habitaciones para los huéspedes</h3>
+                            <p>Sitio web orientado al publico</p>
+                                <ul>
+                                    <li>Visualizacion de promociones</li>
+                                    <li>Permite registrar reservas </li>
+                                </ul>
+                        </div>
+                        <div class="funcion2">
+                        <h3>Administracion de recepcion</h3>
+                        <p>Interface central de gestion</p>
+                            <ul>
+                                <li>Gestiona el check-in y check-out de los clientes</li>
+                                <li>Maneja las reservas y reorganiza fecha </li>
+                            </ul>
+                        <i class="fa-solid fa-bell-concierge"></i>
+                        </div>
+                        <div class="funcion3">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <h3>Analisis estadistico y de rendimiento</h3>
+                            <p>Modulo donde se visualiza la informacion procesada</p>
+                                <ul>
+                                    <li>Accede a los indicadores clave de rendimiento </li>
+                                    <li>Visualiza graficos historicos</li>
+                                    <li>Observa las finanzas del hotel </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--==================================================-->
+<!-- Prueba Nuestra demo -->
+<!--==================================================-->
+            <div class="demo" id="demolink">
+                <div class="titulo-demo">
+                    <h1>Prueba gratis nuestra demo</h1>
+                </div>
+                <div class="demo-container animate">
+                    <div class="demos-preview">
+                        <div class="demo-thumbnail">
+                            <div class="img">
+                                <a href="royella.html" target="_blank"><img src="img/slider/demo-thumb-reserva.jpg"></a>
+                            </div>
+                            <p>Sitio Web para reservas de habitaciones.</p>
+                        </div>
+                        <div class="demo-thumbnail">
+                            <div class="img">
+                                <img src="img/slider/demo-thumb-recepcion.jpg">
+                            </div>
+                            <p>Sitio Web para recepcion del hotel.</p>
+                        </div>
+                        <div class="demo-thumbnail">
+                            <div class="img">
+                                <img src="img/slider/demo-thumb-administracion.jpg">
+                            </div>
+                            <p>Sitio Web para administracion del hotel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+<!--==================================================-->
+<!-- Footer -->
+<!--==================================================-->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h1><strong>Lux</strong>Data</h1>
+                    <div class="redes">
+                        <i class="fa-brands fa-facebook-f" id="facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                </div>
+                <div class="slogan">
+                    <h1>Gestiona tu hotel en un solo lugar.</h1>
+                </div>
+                <div class="footer-info">
+                    <h1>Contactanos</h1>
+                        <p><i class="fa-solid fa-phone"></i> +980 (1234) 567 220</p>
+                        <p><i class="fa-regular fa-envelope"></i> LuxuryData@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-final">
+                <p>© 2025, LuxData. Todos Los Derechos Reservados.</p>
+            </div>
+        </footer>
+        <!-- Javascript -->
+        <script src="animacionSlider.js"></script>
+    </body>
+</html>
